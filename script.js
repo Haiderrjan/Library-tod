@@ -1,5 +1,5 @@
 
-const myLibrary = [];
+let myLibrary = [];
 
 
 
@@ -35,16 +35,28 @@ class Book{
 
 
 function addBookToLibrary(){
-    const percy = new Book("percy", "jacky", "256", "not read as of yet");
+    let percy = new Book("percy", "jacky", "256", "not read as of yet");
     myLibrary.push(percy);
-    const harry = new Book("harry", "jk rolin", "664", "read");
+    let harry = new Book("harry", "jk rolin", "664", "read");
     myLibrary.push(harry)
-
-    
-
-
     
 }
+
+
+
+function removeBook(){
+   
+
+    myLibrary = myLibrary.filter(myLibrary => myLibrary.title !== "percy")
+    console.log(myLibrary);
+   
+
+
+
+}
+
+
+
 
  function listOfBooks(){
         for(const books of myLibrary) {
@@ -53,8 +65,3 @@ function addBookToLibrary(){
         
  }
         
-
-
-
-
-
