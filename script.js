@@ -102,7 +102,7 @@ const deleteForm = document.querySelector("#deleteForm")
     
 
 
-        listOfBooks(name)
+        listOfBooks()
     // makeCard(name)
     // const author = form.elements.author.value;
     // const read = form.elements.read.value;
@@ -157,10 +157,13 @@ const deleteForm = document.querySelector("#deleteForm")
  
 
 
- function listOfBooks(title){
+ function listOfBooks(){
+
+   grid.innerHTML = ""
     
         for(const books of myLibrary) {
             console.log(books);
+            
 
  const cell = document.createElement("div")
     cell.classList.add("cell")
@@ -176,7 +179,7 @@ const deleteForm = document.querySelector("#deleteForm")
 
 
     const titles = document.createElement("h4")
-    titles.textContent = title;
+    titles.textContent = books.title;
     // const pages = document.createElement("p")
     // pages.textContent = title;
 
@@ -189,11 +192,10 @@ const deleteForm = document.querySelector("#deleteForm")
     cell.append(card)
     card.append(cardContent)
     cardContent.append(content)
-    content.append(titles)
+    content.append(books.title)
     // content.append(pages)
     // content.append(reads)
-console.log("workes")
-   
+
 
 
 
