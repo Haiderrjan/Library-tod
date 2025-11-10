@@ -22,12 +22,7 @@ class Book{
 
         const booker = `${this.title} by ${this.author}, ${this.pages}, ${this.read}`
         myLibrary.push(booker);
-
-    }
-
-   
-          
-        
+    }  
     }
    
 
@@ -65,3 +60,16 @@ function removeBook(){
         
  }
         
+
+
+ const addBook = document.querySelector("#add-books");
+const deleteForm = document.querySelector("#deleteForm")
+ const message = document.querySelector(".forming")
+
+ addBook.addEventListener("click", function(){
+    message.style.display = "unset";
+ })
+
+ deleteForm.addEventListener("click", function(){
+    message.style.display = "none";
+ })
