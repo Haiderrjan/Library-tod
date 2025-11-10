@@ -1,96 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="app.css">
-    <title>Library</title>
 
-    <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="app.css">
+  <title>Library</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
 </head>
+
 <body>
 
   <header>
     <h1 class="title">Library</h1>
     <div class="container-btn">
- <button class="add-book" id="add-books">Add Book to Your Library</button>
+      <button class="add-book" id="form-book">Add Book to Your Library</button>
     </div>
   </header>
 
-<section>
-<div class="forming">
-<div class="container is-max-tablet" id="form-book">
-    
-<form class="box">
-<div class="buttons are-medium has-addons is-right mb-0">
-   <button class="delete is-medium" aria-label="delete" id="deleteForm"></button>
-     </div>
-  <div class="field">
-    <label class="label">Book Title</label>
-    <div class="control">
-      <input class="input" type="text" placeholder="Book Title" />
+  <section>
+    <div class="forming">
+      <div class="container is-max-tablet">
+
+        <form class="box" id="form">
+          <div class="buttons are-medium has-addons is-right mb-0">
+            <button class="delete is-medium" aria-label="delete" id="deleteForm"></button>
+          </div>
+          <div class="field">
+            <label class="label">Book Title</label>
+            <div class="control">
+              <input name="booktitle" class="input" type="text" placeholder="Book Title" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Author Name</label>
+            <div class="control">
+              <input name="author" class="input" type="text" placeholder="Author Name" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Pages</label>
+            <div class="control">
+              <input name="read" class="input" type="text" placeholder="Pages of Book" />
+            </div>
+          </div>
+
+          <div class="buttons has-addons is-centered">
+            <button class="button is-primary is-dark mt-0" id="btn-book">Add</button>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="field">
-    <label class="label">Author Name</label>
-    <div class="control">
-      <input class="input" type="text" placeholder="Author Name" />
+
+  <!-- ADDING THE BOOKS TO THE PAGE CARDS -->
+
+  <section id="section-books">
+    <div class="fixed-grid has-4-cols"> 
+      <div class="grid" id="grid">
+<!-- 
+        <div class="cell">
+          <div class="card">
+            <div class="card-content">
+              <div class="content">
+                <h4>title - author</h3>
+                  <p>256 Pages</p>
+                  <p>Not read</p>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+      </div>
     </div>
-  </div>
-
-   <div class="field">
-    <label class="label">Pages</label>
-    <div class="control">
-      <input class="input" type="text" placeholder="Pages of Book" />
-    </div>
-  </div>
-
- <div class="buttons has-addons is-centered">
-     <button class="button is-primary is-dark mt-0">Add</button>
-     </div>
-</form>
-</div>
-</div>
-</section>
-
-
-<!-- ADDING THE BOOKS TO THE PAGE CARDS -->
-
-<section>
-<div class="fixed-grid has-4-cols">
-<div class="grid">
-
-  <div class="cell">
-   <div class="card">
-  <div class="card-content">
-    <div class="content">
-      <h4>title - author</h3>
-      <p>256 Pages</p>
-      <p>Not read</p>
-    </div>
-  </div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-  </div>
-</section>
+  </section>
 
 
 
@@ -99,4 +86,5 @@
 
 </body>
 <script src="script.js"></script>
+
 </html>

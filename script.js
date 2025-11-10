@@ -62,11 +62,12 @@ function removeBook(){
         
 
 
- const addBook = document.querySelector("#add-books");
+ const bookForm = document.querySelector("#form-book");
 const deleteForm = document.querySelector("#deleteForm")
  const message = document.querySelector(".forming")
+ const grid = document.querySelector("#grid")
 
- addBook.addEventListener("click", function(){
+ bookForm.addEventListener("click", function(){
     message.style.display = "unset";
  })
 
@@ -75,3 +76,64 @@ const deleteForm = document.querySelector("#deleteForm")
     message.style.display = "none";
 
  })
+
+
+ const btnBook = document.querySelector("#btn-book");
+//  const bookName = document.querySelector("#book-title")
+    const content = document.querySelector(".content");
+    const form = document.querySelector("#form")
+    
+
+ btnBook.addEventListener("click", function(e){
+    e.preventDefault();
+    const name = form.elements.booktitle.value;
+    makeCard(name)
+    // const author = form.elements.author.value;
+    // const read = form.elements.read.value;
+    
+
+    
+
+
+ })
+
+
+ function makeCard(title){
+    const cell = document.createElement("div")
+    cell.classList.add("cell")
+
+    const card = document.createElement("div")
+    cell.classList.add("card")
+
+    const cardContent = document.createElement("div")
+    cell.classList.add("cardContent")
+
+    const content = document.createElement("div")
+    cell.classList.add("content")
+
+
+    const titles = document.createElement("h4")
+    titles.textContent = title;
+    // const pages = document.createElement("p")
+    // pages.textContent = title;
+
+    // const reads = document.createElement("p")
+    // reads.textContent = title;
+
+    
+
+    grid.append(cell);
+    cell.append(card)
+    card.append(cardContent)
+    cardContent.append(content)
+    content.append(titles)
+    // content.append(pages)
+    // content.append(reads)
+console.log("workes")
+   
+
+
+
+
+ }
+
