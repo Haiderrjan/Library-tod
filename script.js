@@ -29,11 +29,16 @@ class Book{
 
 
 
-function addBookToLibrary(){
-    let percy = new Book("percy", "jacky", "256", "not read as of yet");
-    myLibrary.push(percy);
-    let harry = new Book("harry", "jk rolin", "664", "read");
-    myLibrary.push(harry)
+function addBookToLibrary(name,author,page,read){
+    // let percy = new Book("percy", "jacky", "256", "not read as of yet");
+    // myLibrary.push(percy);
+    // let harry = new Book("harry", "jk rolin", "664", "read");
+    // myLibrary.push(harry)
+
+    let book = new Book(name, author,page,read);
+    myLibrary.push(book);
+
+
     
 }
 
@@ -53,12 +58,14 @@ function removeBook(){
 
 
 
- function listOfBooks(){
-        for(const books of myLibrary) {
-            console.log(books);
-        }
+//  function listOfBooks(title){
+//         for(const books of myLibrary) {
+//             console.log(books);
+
+
+//         }
         
- }
+//  }
         
 
 
@@ -86,8 +93,17 @@ const deleteForm = document.querySelector("#deleteForm")
 
  btnBook.addEventListener("click", function(e){
     e.preventDefault();
-    const name = form.elements.booktitle.value;
-    makeCard(name)
+    const name = form.elements.bookTitle.value;
+    const author = form.elements.authorName.value;
+    const page = form.elements.page.value;
+    const read = form.elements.read.value;
+
+        addBookToLibrary(name,author,page,read);
+    
+
+
+        listOfBooks(name)
+    // makeCard(name)
     // const author = form.elements.author.value;
     // const read = form.elements.read.value;
     
@@ -98,8 +114,55 @@ const deleteForm = document.querySelector("#deleteForm")
  })
 
 
- function makeCard(title){
-    const cell = document.createElement("div")
+ function makeCard(name){
+//     const cell = document.createElement("div")
+//     cell.classList.add("cell")
+
+//     const card = document.createElement("div")
+//     cell.classList.add("card")
+
+//     const cardContent = document.createElement("div")
+//     cell.classList.add("cardContent")
+
+//     const content = document.createElement("div")
+//     cell.classList.add("content")
+
+
+//     const titles = document.createElement("h4")
+//     titles.textContent = title;
+//     // const pages = document.createElement("p")
+//     // pages.textContent = title;
+
+//     // const reads = document.createElement("p")
+//     // reads.textContent = title;
+
+    
+
+//     grid.append(cell);
+//     cell.append(card)
+//     card.append(cardContent)
+//     cardContent.append(content)
+//     content.append(titles)
+//     // content.append(pages)
+//     // content.append(reads)
+// console.log("workes")
+   
+
+
+
+
+ }
+
+
+ 
+
+
+ function listOfBooks(title){
+    
+        for(const books of myLibrary) {
+            console.log(books);
+
+ const cell = document.createElement("div")
     cell.classList.add("cell")
 
     const card = document.createElement("div")
@@ -135,5 +198,6 @@ console.log("workes")
 
 
 
+        }
+        
  }
-
