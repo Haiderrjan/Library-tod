@@ -70,6 +70,8 @@ const deleteForm = document.querySelector("#deleteForm")
     message.style.display = "unset";
  })
 
- deleteForm.addEventListener("click", function(){
+ deleteForm.addEventListener("click", function(e){
+    e.preventDefault();
     message.style.display = "none";
+
  })
