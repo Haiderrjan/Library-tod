@@ -5,7 +5,7 @@ let myLibrary = [];
 
 
 class Book{
-    constructor(title, author,pages,read, id){
+    constructor(title, author,pages, read,id){
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -18,188 +18,76 @@ class Book{
         return `${this.title} by ${this.author}, ${this.pages}, ${this.read}`;
     }
 
-    addBook(){
-
-        const booker = `${this.title} by ${this.author}, ${this.pages}, ${this.read}`
-        myLibrary.push(booker);
-    }  
+ 
     }
    
 
 
 
 
-function addBookToLibrary(name,author,page,read){
-    // let percy = new Book("percy", "jacky", "256", "not read as of yet");
-    // myLibrary.push(percy);
-    // let harry = new Book("harry", "jk rolin", "664", "read");
-    // myLibrary.push(harry)
+function addBookToLibrary(){
 
-    let book = new Book(name, author,page,read);
-    myLibrary.push(book);
-
+      let FormName = document.querySelector("#booktitle").value;
+      let formAuthor = document.querySelector("#author").value
+      let formPages = document.querySelector("#pages").value
+      let formRead = document.querySelector("#read").value
 
     
-}
-
-
-
-function removeBook(){
-   
-
-    myLibrary = myLibrary.filter(myLibrary => myLibrary.title !== "percy")
-    console.log(myLibrary);
-   
-
-
-
-}
-
-
-
-
-//  function listOfBooks(title){
-//         for(const books of myLibrary) {
-//             console.log(books);
-
-
-//         }
-        
-//  }
-        
-
-
- const bookForm = document.querySelector("#form-book");
-const deleteForm = document.querySelector("#deleteForm")
- const message = document.querySelector(".forming")
- const grid = document.querySelector("#grid")
-
- bookForm.addEventListener("click", function(){
-    message.style.display = "unset";
- })
-
- deleteForm.addEventListener("click", function(e){
-    e.preventDefault();
-    message.style.display = "none";
-
- })
-
-
- const btnBook = document.querySelector("#btn-book");
-//  const bookName = document.querySelector("#book-title")
-    const content = document.querySelector(".content");
-    const form = document.querySelector("#form")
+        myLibrary.push(new Book(FormName, formAuthor, formPages, formRead))
     
-
- btnBook.addEventListener("click", function(e){
-    e.preventDefault();
-    const name = form.elements.bookTitle.value;
-    const author = form.elements.authorName.value;
-    const page = form.elements.page.value;
-    const read = form.elements.read.value;
-
-        addBookToLibrary(name,author,page,read);
-    
-
-
-        listOfBooks()
-    // makeCard(name)
-    // const author = form.elements.author.value;
-    // const read = form.elements.read.value;
-    
-
-    
-
-
- })
-
-
- function makeCard(name){
-//     const cell = document.createElement("div")
-//     cell.classList.add("cell")
-
-//     const card = document.createElement("div")
-//     cell.classList.add("card")
-
-//     const cardContent = document.createElement("div")
-//     cell.classList.add("cardContent")
-
-//     const content = document.createElement("div")
-//     cell.classList.add("content")
-
-
-//     const titles = document.createElement("h4")
-//     titles.textContent = title;
-//     // const pages = document.createElement("p")
-//     // pages.textContent = title;
-
-//     // const reads = document.createElement("p")
-//     // reads.textContent = title;
-
-    
-
-//     grid.append(cell);
-//     cell.append(card)
-//     card.append(cardContent)
-//     cardContent.append(content)
-//     content.append(titles)
-//     // content.append(pages)
-//     // content.append(reads)
-// console.log("workes")
-   
-
-
-
-
- }
-
-
  
 
+}
 
- function listOfBooks(){
+const sumbitBook = document.querySelector("#btnSubmit") 
 
-   grid.innerHTML = ""
-    
-        for(const books of myLibrary) {
-            console.log(books);
-            
-
- const cell = document.createElement("div")
-    cell.classList.add("cell")
-
-    const card = document.createElement("div")
-    cell.classList.add("card")
-
-    const cardContent = document.createElement("div")
-    cell.classList.add("cardContent")
-
-    const content = document.createElement("div")
-    cell.classList.add("content")
-
-
-    const titles = document.createElement("h4")
-    titles.textContent = books.title;
-    // const pages = document.createElement("p")
-    // pages.textContent = title;
-
-    // const reads = document.createElement("p")
-    // reads.textContent = title;
-
+sumbitBook.addEventListener("click", function(e){
+    e.preventDefault();
+    addBookToLibrary()
+    renderBooksToPage();
     
 
-    grid.append(cell);
-    cell.append(card)
-    card.append(cardContent)
-    cardContent.append(content)
-    content.append(books.title)
-    // content.append(pages)
-    // content.append(reads)
+})
 
 
+function renderBooksToPage(){
+const renderBook = document.querySelector(".render-books")
+renderBook.textContent = "";
 
+myLibrary.forEach((myLibrary) => {
+    let card = document.createElement("div")
+        card.classList.add("card")
+        card.classList.add(`${myLibrary.id}`)
+        renderBook.appendChild(card)
 
+ for (let key in myLibrary) {
+      const text = document.createElement('p');
+      text.textContent = `${key}: ${myLibrary[key]}`;
+      card.appendChild(text);
+    }
 
+    const removeBtn = document.createElement("button")
+card.appendChild(removeBtn)
+removeBtn.textContent = "remove"
+
+removeBtn.onclick = removeButton
+})
+}
+
+function removeButton(){
+    const bookId = this.parentElement.classList[1]
+
+    // const findBook = myLibrary.findIndex((element) => element.Id === bookId);
+    // const deleteBook = myLibrary.splice(findBook,1)
+    // this.parentElement.remove();
+
+    myLibrary.map((book, index) => {
+        if (book.id === bookId){
+            myLibrary.splice(index,1)
+             this.parentElement.remove();
         }
-        
- }
+    })
+
+}
+
+

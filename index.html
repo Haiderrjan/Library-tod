@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="app.css">
   <title>Library</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"> -->
 </head>
 
 <body>
@@ -20,60 +20,29 @@
   </header>
 
   <section>
-    <div class="forming">
-      <div class="container is-max-tablet">
+   
+      <div class="container">
 
-        <form class="box" id="form">
-          <div class="buttons are-medium has-addons is-right mb-0">
-            <button class="delete is-medium" aria-label="delete" id="deleteForm"></button>
-          </div>
-          <div class="field">
-            <label class="label">Book Title</label>
-            <div class="control">
-              <input name="bookTitle" class="input" type="text" placeholder="Book Title" />
-            </div>
-          </div>
+        <form  id="form">
+            <label for="book">Book Title</label>
+              <input type="text" placeholder="Book Title" id="booktitle" />
+            <label for="author">Author Name</label>
+              <input name="authorName" type="text" placeholder="Author Name" id="author" />
+            <label for="pages">Pages</label>
+              <input name="pages" type="text" placeholder="Pages of Book" id="pages"/>
+            <label for="label">read</label>
+       
+              <input name="read" type="text" placeholder="Pages of Book" id="read"/>
+          <input type="submit" name="btnSubmit" id="btnSubmit" value="Add book">
 
-          <div class="field">
-            <label class="label">Author Name</label>
-            <div class="control">
-              <input name="authorName" class="input" type="text" placeholder="Author Name" />
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">Pages</label>
-            <div class="control">
-              <input name="page" class="input" type="text" placeholder="Pages of Book" />
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">read</label>
-            <div class="control">
-              <input name="read" class="input" type="text" placeholder="Pages of Book" />
-            </div>
-          </div>
-
-          <div class="buttons has-addons is-centered">
-            <button class="button is-primary is-dark mt-0" id="btn-book">Add</button>
-          </div>
         </form>
-      </div>
-    </div>
+     
   </section>
-
 
   <!-- ADDING THE BOOKS TO THE PAGE CARDS -->
-
-  <section id="section-books">
-    <div class="fixed-grid has-4-cols"> 
-      <div class="grid" id="grid">
-
-
-      </div>
-    </div>
-  </section>
+<div class="render-books" id="renderBooks">
+  
+</div>
 
 
 
