@@ -2,6 +2,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Indie Flower";
+    font-weight: bold;
 }
 
 
@@ -9,8 +11,12 @@
 
     /* border: 1px solid rebeccapurple; */
     text-align: center;
-    margin: 20px;
+    margin-top: 20px;
+    
 }
+
+
+
 
 .container-btn {
     width: 100%;
@@ -20,16 +26,69 @@
     align-items: center;
     justify-content: center;
 }
-.add-book{
-    text-align: center;
-}
 
-.forming {
-    /* display: none; */
-}
 
-/* 
+
 .card {
+    margin: 0 auto;
+    width: 50%;
+    height: 250px;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-bottom: 50px;
+   visibility: hidden;
+    display: flex;
+    align-items: center
+    
+}
+
+.title-input, .name-input, .pages-input, .read-input{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    width: 150px;
+    height: 35px;
+   
+}
+
+.title-book, .name, .pages, .read, .submit-btn {
+    margin-left: 35px;
+} 
+
+
+.line {
+    width: 200px;
+    margin: 0 auto;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    height: 10px;
+}
+
+.render-books {
+    height: 100%;
     width: 100%;
-    height: 100px;
-} */
+    display: flex;
+    margin-left: 50px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+
+
+
+
+.book-card  {
+   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+   width: 250px;
+   border-radius: 20px;
+   padding: 10px 25px;
+   font-size: 1.2rem;
+}
+
+
+
+
+
+

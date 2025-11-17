@@ -2,6 +2,17 @@
 let myLibrary = [];
 
 
+const formBtn = document.querySelector("#form-book");
+ const containerAddBook = document.querySelector("#card");
+
+formBtn.addEventListener("click", function(){
+    
+    containerAddBook.style.visibility = "visible";
+})
+
+
+
+
 
 
 class Book{
@@ -11,11 +22,6 @@ class Book{
     this.pages = pages;
     this.read = read;
     this.id = crypto.randomUUID();
-    }
-
-    info(){
-        
-        return `${this.title} by ${this.author}, ${this.pages}, ${this.read}`;
     }
 
  
@@ -45,6 +51,7 @@ sumbitBook.addEventListener("click", function(e){
     e.preventDefault();
     addBookToLibrary()
     renderBooksToPage();
+    containerAddBook.style.visibility = "hidden";
     
 
 })
@@ -55,19 +62,29 @@ const renderBook = document.querySelector(".render-books")
 renderBook.textContent = "";
 
 myLibrary.forEach((myLibrary) => {
-    let card = document.createElement("div")
-        card.classList.add("card")
-        card.classList.add(`${myLibrary.id}`)
-        renderBook.appendChild(card)
+    let bookCard = document.createElement("div")
+        bookCard.classList.add("book-card")
+        bookCard.classList.add(`${myLibrary.id}`)
+        renderBook.appendChild(bookCard)
 
- for (let key in myLibrary) {
+
+ for (const[key, value] of Object.entries(myLibrary)) {
+
+    if (myLibrary[key] != myLibrary.id) {
       const text = document.createElement('p');
       text.textContent = `${key}: ${myLibrary[key]}`;
-      card.appendChild(text);
+      bookCard.appendChild(text);
+    }
+    
+      
+     
+
     }
 
-    const removeBtn = document.createElement("button")
-card.appendChild(removeBtn)
+
+
+const removeBtn = document.createElement("button")
+bookCard.appendChild(removeBtn)
 removeBtn.textContent = "remove"
 
 removeBtn.onclick = removeButton
@@ -89,5 +106,6 @@ function removeButton(){
     })
 
 }
+
 
 

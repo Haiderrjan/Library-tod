@@ -7,43 +7,74 @@
   <link rel="stylesheet" href="app.css">
   <title>Library</title>
 
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
   <header>
+   
     <h1 class="title">Library</h1>
+    <div class="line">
+    </div>
     <div class="container-btn">
       <button class="add-book" id="form-book">Add Book to Your Library</button>
     </div>
   </header>
 
-  <section>
-   
-      <div class="container">
 
-        <form  id="form">
+<div class="card" id="card">
+
+   <form  id="form" class="forms">
+
+    <div class="title-book">
             <label for="book">Book Title</label>
-              <input type="text" placeholder="Book Title" id="booktitle" />
+              <input  class="title-input" type="text" placeholder="Book Title" id="booktitle" />
+              </div>
+
+              <div class="name">
             <label for="author">Author Name</label>
-              <input name="authorName" type="text" placeholder="Author Name" id="author" />
+              <input class="name-input" name="authorName" type="text" placeholder="  Author Name" id="author" />
+              </div>
+
+              <div class="pages">
             <label for="pages">Pages</label>
-              <input name="pages" type="text" placeholder="Pages of Book" id="pages"/>
+              <input  class="pages-input" name="pages" type="text" placeholder="  Pages of Book" id="pages"/>
+              </div>
+
+              <div class="read">
             <label for="label">read</label>
-       
-              <input name="read" type="text" placeholder="Pages of Book" id="read"/>
-          <input type="submit" name="btnSubmit" id="btnSubmit" value="Add book">
+              <input class="read-input" name="read" type="text" placeholder="Pages of Book" id="read"/>
+              <div class="sumbit-btn">
+          <input class="sumbit-input" type="submit" name="btnSubmit" id="btnSubmit" value="Add book">
+          </div>
+        </div>
 
         </form>
      
-  </section>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+ 
 
   <!-- ADDING THE BOOKS TO THE PAGE CARDS -->
 <div class="render-books" id="renderBooks">
   
 </div>
-
 
 
 
