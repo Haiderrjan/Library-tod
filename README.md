@@ -53,7 +53,7 @@ etch-a-sketch/
 
 1. Clone this repository or download the files.
 2. Open `index.html` in your browser.
-3.  fun Reading :)!
+3.  fun Reading :) !
 ---
 ## 🧑‍💻 Author
 
