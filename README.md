@@ -6,7 +6,7 @@ A browser version of the game Rock Paper and Scissors
 
 ### 📸 Preview
 
-n/a
+**https://haiderrjan.github.io/Library-tod/**
 
 ---
 
